@@ -58,8 +58,32 @@ def add():
         return redirect("/")
 
     return render_template("add.html")
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
+    conn = sqlite3.connect("jobs.db")
+    c = conn.cursor()
 
+    if request.method == 'POST':
+        company = request.form['company']
+        role = request.form['role']
+        status = request.form['status']
+        link = request.form['link']
+        deadline = request.form['deadline']
 
+        c.execute("""
+            UPDATE applications
+            SET company=?, role=?, status=?, link=?, deadline=?
+            WHERE id=?
+        """, (company, role, status, link, deadline, id))
+        conn.commit()
+        conn.close()
+        return redirect("/")
+
+    # GET request - fetch job
+    c.execute("SELECT * FROM applications WHERE id=?", (id,))
+    job = c.fetchone()
+    conn.close()
+    return render_template('edit.html', job=job)
 # -----------------------------
 # Delete Application
 # -----------------------------

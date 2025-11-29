@@ -30,7 +30,10 @@
         <td>{{ job[3] }}</td>
         <td><a href="{{ job[4] }}" target="_blank">Open</a></td>
         <td>{{ job[5] }}</td>
-        <td><a class="delete-btn" href="/delete/{{ job[0] }}">Delete</a></td>
+        <td>
+    <a class="edit-btn" href="/edit/{{ job[0] }}">Edit</a> 
+    <a class="delete-btn" href="/delete/{{ job[0] }}">Delete</a>
+</td>
     </tr>
     {% endfor %}
 

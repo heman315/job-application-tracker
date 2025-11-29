@@ -28,6 +28,22 @@ th, td {
     border: 1px solid #ccc;
     padding: 10px;
 }
+.edit-btn, .delete-btn {
+    margin-right: 10px;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
 
 .delete-btn {
     padding: 5px 10px;

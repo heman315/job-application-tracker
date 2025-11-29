@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Job Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Edit Job Application</h1>
+
+<form method="POST">
+    <label>Company:</label>
+    <input type="text" name="company" value="{{ job[1] }}" required>
+    <label>Role:</label>
+    <input type="text" name="role" value="{{ job[2] }}" required>
+    <label>Status:</label>
+    <input type="text" name="status" value="{{ job[3] }}" required>
+    <label>Link:</label>
+    <input type="url" name="link" value="{{ job[4] }}">
+    <label>Deadline:</label>
+    <input type="date" name="deadline" value="{{ job[5] }}">
+    <button type="submit">Update</button>
+</form>
+
+<a href="/">Back</a>
+
+</body>
+</html>
