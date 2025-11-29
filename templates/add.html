@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Add Job Application</h1>
+
+<form method="POST">
+
+    <label>Company Name</label>
+    <input type="text" name="company" required>
+
+    <label>Role</label>
+    <input type="text" name="role" required>
+
+    <label>Status</label>
+    <select name="status">
+        <option>Applied</option>
+        <option>Interview</option>
+        <option>Offer</option>
+        <option>Rejected</option>
+    </select>
+
+    <label>Link</label>
+    <input type="text" name="link" placeholder="Job URL">
+
+    <label>Deadline</label>
+    <input type="date" name="deadline">
+
+    <button type="submit">Add Application</button>
+</form>
+
+</body>
+</html>

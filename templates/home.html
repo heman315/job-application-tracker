@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h1>Job Application Tracker</h1>
+<a class="add-btn" href="/dashboard">📊 Dashboard</a>
+<a class="add-btn" href="/add">+ Add New Application</a>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Link</th>
+        <th>Deadline</th>
+        <th>Action</th>
+    </tr>
+
+    {% for job in data %}
+    <tr>
+        <td>{{ job[0] }}</td>
+        <td>{{ job[1] }}</td>
+        <td>{{ job[2] }}</td>
+        <td>{{ job[3] }}</td>
+        <td><a href="{{ job[4] }}" target="_blank">Open</a></td>
+        <td>{{ job[5] }}</td>
+        <td><a class="delete-btn" href="/delete/{{ job[0] }}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
